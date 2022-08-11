@@ -4389,11 +4389,13 @@ document
 
       scoretotal += 1;
       scorecorrect += 1;
+      inarow += 1;
       console.log(scoretotal);
       console.log(scorecorrect);
 
       document.getElementById("scoretotal").innerHTML = scoretotal;
       document.getElementById("scorecorrect").innerHTML = scorecorrect;
+      document.getElementById("inarow").innerHTML = inarow;
     } else if (
       e.target.id == 1 ||
       e.target.id == 2 ||
@@ -4404,7 +4406,9 @@ document
       document.getElementById(e.target.id).style.color = "white";
       scoreincorrect += 1;
       scoretotal -= 1;
+      inarow = 0;
       document.getElementById("scoretotal").innerHTML = scoretotal;
       document.getElementById("scoreincorrect").innerHTML = scoreincorrect;
+      document.getElementById("inarow").innerHTML = inarow;
     }
   });
