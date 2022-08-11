@@ -12,30 +12,41 @@
             integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
             crossorigin="anonymous"></script>
 
-      <style></style>
+      <style>
+            body {
+                  background: url('back.jpg') center top fixed no-repeat;
+                  background-size: cover;
+
+
+
+
+
+                  background-color: yellow;
+            }
+      </style>
 </head>
 
 <body>
       <div class="container">
-            <nav class="navbar bg-light">
+            <nav class="navbar bg-light mb-3">
                   <div class="container-fluid">
                         <span class="navbar-brand mb-0 h1">Color Quiz App</span>
                   </div>
             </nav>
-            <!-- <ul class="list-group mb-5">
-                  <li class="list-group-item">Score: 0 </li>
-                  <li class="list-group-item">Correct:</li>
-                  <li class="list-group-item">Wrong:</li>
-                  <li class="list-group-item">In a row:</li>
+            <ul class="list-group mb-3">
+                  <li class="list-group-item ">Score: <span id="scoretotal">0</span></li>
+                  <li class="list-group-item ">Correct: <span id="scorecorrect">0</span></li>
+                  <li class="list-group-item ">Wrong: <span id="scoreincorrect">0</span></li>
+                  <li class="list-group-item ">In a row: <span id="inarow">0</span></li>
 
-            </ul> -->
+            </ul>
 
             <div id="changingviews">
                   <div class="card">
                         <div class="card-body">
-                              <h5 class="card-title">Welcome</h5>
+                              <!-- <h5 class="card-title">Welcome</h5> -->
                               <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                              <p class="card-text">Select the name of the color you see for each question.</p>
+                              <p class="card-text display-6">Guess the correct name of the color.</p>
                               <button id="startgame" type="button" class="btn btn-primary">Start</button>
 
                               <!-- <a href="#" class="card-link">Another link</a> -->
@@ -44,7 +55,11 @@
 
 
             </div>
-
+            <!-- <nav class="navbar fixed-bottom bg-light">
+                  <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Fixed bottom</a>
+                  </div>
+            </nav> -->
       </div>
 
 

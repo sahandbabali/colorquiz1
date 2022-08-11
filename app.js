@@ -4339,6 +4339,11 @@ document.getElementById("startgame").addEventListener("click", function (e) {
   setgame();
 });
 
+var scoretotal = 0;
+var scorecorrect = 0;
+var scoreincorrect = 0;
+var inarow = 0;
+
 function setgame() {
   //   const keys = Object.keys(colordata);
   //   var randomkey = keys[Math.floor(Math.random() * keys.length)];
@@ -4350,21 +4355,21 @@ function setgame() {
   var colorhex = arraydata[currentchoise].hex;
   var colorname = arraydata[currentchoise].name;
 
-  document.getElementById(
-    "changingviews"
-  ).innerHTML = `  <div style="background-color: ${colorhex}; padding: 2rem;" class="alert alert-primary" role="alert">
+  document.getElementById("changingviews").innerHTML = `<div class="card">
+  <div class="card-body">  <div style="background-color: ${colorhex}; padding: 3rem;" class="alert alert-primary" role="alert">
 
       </div>
       <div id="choiseslist" class="list-group mb-3">
 
-            <a id="1" href="#" class="list-group-item list-group-item-action">1</a>
-            <a id="2" href="#" class="list-group-item list-group-item-action">2</a>
-            <a id="3" href="#" class="list-group-item list-group-item-action">3</a>
-            <a id="4" href="#" class="list-group-item list-group-item-action">4</a>
+            <a id="1" href="#" class="list-group-item list-group-item-action display-6">1</a>
+            <a id="2" href="#" class="list-group-item list-group-item-action display-6">2</a>
+            <a id="3" href="#" class="list-group-item list-group-item-action display-6">3</a>
+            <a id="4" href="#" class="list-group-item list-group-item-action display-6">4</a>
 
       </div>
-      <button id="next" onclick="setgame()" type="button" class="btn btn-primary">next</button>
-      `;
+      <button id="next" onclick="setgame()" type="button" class="btn btn-primary ">Next</button>
+      </div>
+      </div>`;
   for (let i = 1; i < 5; i++) {
     if (i == currentcorrect) {
       document.getElementById(i).innerText = colorname;
@@ -4379,9 +4384,16 @@ document
   .getElementById("changingviews")
   .addEventListener("click", function (e) {
     if (e.target.id == currentcorrect) {
-      console.log("dorosteeee");
       document.getElementById(currentcorrect).style.backgroundColor = "green";
       document.getElementById(currentcorrect).style.color = "white";
+
+      scoretotal += 1;
+      scorecorrect += 1;
+      console.log(scoretotal);
+      console.log(scorecorrect);
+
+      document.getElementById("scoretotal").innerHTML = scoretotal;
+      document.getElementById("scorecorrect").innerHTML = scorecorrect;
     } else if (
       e.target.id == 1 ||
       e.target.id == 2 ||
@@ -4390,5 +4402,9 @@ document
     ) {
       document.getElementById(e.target.id).style.backgroundColor = "red";
       document.getElementById(e.target.id).style.color = "white";
+      scoreincorrect += 1;
+      scoretotal -= 1;
+      document.getElementById("scoretotal").innerHTML = scoretotal;
+      document.getElementById("scoreincorrect").innerHTML = scoreincorrect;
     }
   });
