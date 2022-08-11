@@ -2,3 +2,4 @@ background
 <a href='https://www.freepik.com/vectors/comic-zoom'>Comic zoom vector created by vector_corp - www.freepik.com</a>
 
 logo
+<a href="https://www.flaticon.com/free-icons/name" title="name icons">Name icons created by Freepik - Flaticon</a>
